@@ -1,5 +1,5 @@
 import { Tabs, useSegments } from 'expo-router';
-import { View, StyleSheet, Pressable } from 'react-native';
+import { View, StyleSheet, Pressable, ViewStyle } from 'react-native';
 import {
   Chrome as Home,
   ShoppingBag,
@@ -68,7 +68,7 @@ export default function TabLayout() {
 
           return (
             <AnimatedPressable
-              {...props}
+              {...(props as ViewStyle)}
               style={[styles.tabButton, animatedStyle]}
             >
               <View style={styles.iconContainer}>
@@ -93,12 +93,9 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   tabBar: {
-    height: 65,
-    position: 'absolute',
-    bottom: 20,
-    left: 30,
-    right: 30,
-    borderRadius: 32,
+    // position: 'absolute',
+
+    // borderRadius: 32,
     backgroundColor: '#FFFFFF',
     shadowColor: '#000',
     shadowOffset: {
@@ -108,13 +105,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 12,
     elevation: 8,
-    borderTopWidth: 0,
-    paddingBottom: 0,
-    paddingHorizontal: 12,
-    marginHorizontal: 20,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    // borderTopWidth: 0,
+    // paddingBottom: 0,
+
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-between',
   },
   tabButton: {
     flex: 1,
